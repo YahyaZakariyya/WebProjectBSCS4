@@ -52,7 +52,12 @@ include "navbar.php";
 
 <?php
 // condition will be set here
-include "login_signup.php";
+if($userID == ''){
+    include "login_signup.php";
+}
+else{
+    
+}
 ?>
 
 </body>

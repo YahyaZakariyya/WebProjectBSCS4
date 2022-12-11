@@ -1,5 +1,5 @@
 <?php
-    $conn = mysqli_connect('localhost','root','','nssc') or die('Connection Failed');
+include "connection.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">

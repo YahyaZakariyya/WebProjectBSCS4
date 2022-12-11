@@ -8,22 +8,23 @@
 		</div>
 
 		<!-- Login Form -->
-		<form class="modal-body">
+		<form name="login" class="modal-body" action="programming.php" method="POST">
 			<div class="mb-2">
-				<label for="username" class="form-label">Username or Email</label>
-				<input type="text" name="user_name" id="user_name" class="form-control"/>
+				<label for="un_email" class="form-label">Username or Email</label>
+				<input type="text" name="un_email" id="un_email" class="form-control"/>
 			</div>
 			<div class="mb-2">
 				<label for="password" class="form-label">Password</label>
 				<input type="password" name="password" id="password" class="form-control"/>
 			</div>
-		</form>
 
 		<div class="modal-footer">
 			<p>Not a user <a href="#" data-bs-target="#modal" data-bs-toggle="modal" data-bs-dismiss="modal">SignUp</a></p>
 			<button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
-			<button type="button" class="btn btn-success">Login</button>
+			<button type="submit" name="login_button" class="btn btn-success">Login</button>
 		</div>
+		</form>
+
 	</div>
 </div>
 </div>
@@ -38,7 +39,7 @@
 		</div>
 
 		<!-- Sign Up Form -->
-		<div class="modal-body">
+		<form name="sign_up" class="modal-body" action="programming.php" method="POST">
 			<div class="mb-2">
 				<label for="first_name" class="form-label">First Name</label>
 				<input type="text" name="first_name" id="first_name" class="form-control"/>
@@ -65,37 +66,38 @@
 			</div>
 			<div class="mb-2">
 				<div class="form-check">
-					<input class="form-check-input" type="radio" name="gender" id="gender" checked value="male">
+					<input class="form-check-input" type="radio" name="gender" id="male" checked value="male">
 					<label class="form-check-label" for="gender">
 					Male
 					</label>
 				</div>
 				<div class="form-check">
-					<input class="form-check-input" type="radio" name="gender" id="gender" value="female">
+					<input class="form-check-input" type="radio" name="gender" id="female" value="female">
 					<label class="form-check-label" for="gender">
 					Female
 					</label>
 				</div>
 			</div>
-			<div class="input-group date" id="datepicker">
+			<!-- <div class="input-group date" id="datepicker">
 				<input type="text" class="form-control" id="date"/>
 				<span class="input-group-append">
 				<span class="input-group-text bg-light">
 					<i class="fa fa-calendar"></i>
 				</span>
 				</span>
-			</div>
+			</div> -->
 			<div class="mb-2">
 				<label for="image" class="form-label">Profile Image</label>
 				<input type="file" name="image" id="image" class="form-control"/>
 			</div>
-		</div>
+			<button type="submit" name="sign_up_button" class="btn btn-success">Sign Up</button>
+		</form>
 
 	<div class="modal-footer">
 		<p>Already have an account <a href="#" class="me-3" data-bs-target="#mymodal" data-bs-toggle="modal" data-bs-dismiss="modal">Login</a></p>
 		<button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
-		<button type="button" class="btn btn-success">Sign Up</button>
 	</div>
+
 	</div>
 </div>
 </div>

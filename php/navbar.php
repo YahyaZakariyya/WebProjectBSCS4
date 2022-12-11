@@ -1,3 +1,6 @@
+<?php
+include "connection.php";
+?>
 <!-- Navbar -->
 <nav class="navbar bg-light sticky-top">
     <div class="container-fluid row justify-content-between">
@@ -12,9 +15,13 @@
             </form>
         </div>
         <div class="col-2 text-end">
-            <!-- condition for logged in or not -->
-            <!-- <img class="rounded" src="../images/Youtube Logo.jpg" alt="" width="40px"> -->
+            <?php if($userID == ''){ ?>
             <button type="button" class="btn btn-primary" data-bs-target="#mymodal" data-bs-toggle="modal">Login</button>
+            <?php
+            }else{
+                echo "<img class='rounded' src='$userImage' width='40px'>";
+            }
+            ?>
         </div>
     </div>
 </nav>

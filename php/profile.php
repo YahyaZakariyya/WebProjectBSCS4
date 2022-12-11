@@ -6,6 +6,7 @@ include "head.php";
 <?php
 include "navbar.php";
 ?>
+
 <section class="container col-lg-8">
 <!-- Profile Info -->
 <div class="text-center bg-secondary text-light rounded p-5">
