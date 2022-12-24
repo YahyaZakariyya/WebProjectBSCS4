@@ -1,12 +1,4 @@
-<?php
-include "head.php";
-?>
-
-<body?>
-<?php
-include "navbar.php";
-?>
-
+<?php include "header.php" ?>
 <section class="container col-lg-8">
 <!-- Profile Info -->
 <div class="text-center bg-secondary text-light rounded p-5">
@@ -44,9 +36,4 @@ include "navbar.php";
     </div>
 </table>
 </section>
-<?php
-// condition will be set here
-include "login_signup.php";
-?>
-</body>
-</html>
+<?php include "footer.php" ?>
