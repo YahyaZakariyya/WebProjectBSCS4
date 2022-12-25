@@ -15,13 +15,11 @@ if(isset($_POST['update_button'])){
 }
 ?>
 
-<!-- Sign Up Form -->
+<!-- Update Form -->
 <?php include "header.php"; ?>
 <?php
 $sql = "SELECT user_name, user_email, first_name, last_name, user_type FROM users WHERE user_name = '{$_GET['id']}'";
 $result = mysqli_query($conn, $sql) or die("Query Failed");
-// echo $_SERVER['PHP_SELF'];
-// die();
 if(mysqli_num_rows($result)>0){
     while($row = mysqli_fetch_assoc($result)){
 ?>

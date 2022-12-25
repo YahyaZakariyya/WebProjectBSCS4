@@ -17,7 +17,7 @@ if(isset($_POST['sign_up_button'])){
     }else{
         $sql_insert = "INSERT into users (user_name, user_email, user_password, first_name, last_name, gender, image, user_type) VALUES ('{$user_name}','{$user_email}','{$user_password}','{$first_name}','{$last_name}','{$gender}','{$profile_image}','{$user_type}')";
         if(mysqli_query($conn, $sql_insert)){
-            header("Location: {$host_name}/profile.php");
+            header("Location: {$host_name}");
         }
     }
 }

@@ -13,7 +13,7 @@
         <div class="container-fluid row justify-content-between">
             <div class="col-2 text-center">
                 
-                <a class="navbar-brand" href="./profile.php">NSSC</a>
+                <a class="navbar-brand" href="index.php">NSSC</a>
             </div>
             <div class="col-6">
                 <form class="d-flex btn-group">
@@ -22,9 +22,19 @@
                 </form>
             </div>
             <div class="col-2 text-end">
+                <?php
+                session_start();
+                if(isset($_SESSION['user_name'])){
+                    echo '<p>'.$_SESSION['user_name'].'</p>';
+                    echo '<a class="btn btn-primary" href="logout.php">Logout</a>';
+                }else{
+                ?>
                 <button type="button" class="btn btn-primary" data-bs-target="#mymodal" data-bs-toggle="modal">Login</button>
+                <?php } ?>
             </div>
         </div>
     </nav>
-    <?php include "login.php" ?>
-    <?php include "signup.php" ?>
+    <?php
+        include "login.php";
+        include "signup.php";
+    ?>
