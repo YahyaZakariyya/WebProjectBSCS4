@@ -2,39 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>RIU NOTES</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <title>NSSC</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar bg-light sticky-top">
+    <nav class="navbar clr-3 sticky-top">
         <div class="container-fluid row justify-content-between">
-            <div class="col-2 text-center">
-                
-                <a class="navbar-brand" href="index.php">NSSC</a>
+            <div class="navbar-brand col-auto col-lg-2">NSSC</div>
+            <div class="col-3 col-lg-6">
+                <form class="d-flex">
+                    <input class="form-control rounded-0 border-0" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn clr-5 rounded-0 text-light" type="submit">SEARCH</button>
+                    </form>      
             </div>
-            <div class="col-6">
-                <form class="d-flex btn-group">
-                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-primary" type="submit">GO</button>
-                </form>
-            </div>
-            <div class="col-2 text-end">
-                <?php
+            <div class="col-auto col-lg-2 text-end">
+            <?php
                 session_start();
                 if(isset($_SESSION['user_name'])){
-                    echo '<p>'.$_SESSION['user_name'].'</p>';
-                    echo '<a class="btn btn-primary" href="logout.php">Logout</a>';
+            ?>
+                <!-- When logged in -->
+                <div class="btn-group">
+                    <button type="button" class="btn clr-5 text-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><?php echo $_SESSION['user_name']; ?></button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                      <li><a class="dropdown-item" type="button">Profile</a></li>
+                      <li><a class="dropdown-item" type="button">Settings action</a></li>
+                      <li><a class="dropdown-item" type="button" href="logout.php">Logout</a></li>
+                    </ul>
+                </div>
+            <?php
                 }else{
-                ?>
-                <button type="button" class="btn btn-primary" data-bs-target="#mymodal" data-bs-toggle="modal">Login</button>
-                <?php } ?>
+            ?>
+                <!-- When not logged in -->
+                <a class="btn clr-1 rounded-0 border-clr-5 mx-1" href="login.php">LOGIN</a>
+                <a class="btn clr-5 rounded-0 text-light" href="signup.php">SIGN UP</a>
+            <?php } ?>
+                
             </div>
         </div>
     </nav>
-    <?php
-        include "login.php";
-        include "signup.php";
-    ?>
+    <div class="clr-5" style="height: 20px;"></div>

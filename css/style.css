@@ -7,3 +7,23 @@
 .shadow-sm:hover{
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
 }
+
+.clr-5{
+    background-color: #664229;
+}
+
+.clr-3{
+    background-color: #987554;
+}
+
+.clr-1{
+    background-color: #e5d3b3;
+}
+
+.border-clr-5{
+    border: 2px solid #664229;
+}
+
+.clr-2{
+    background-color: tan;
+}
