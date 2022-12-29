@@ -15,7 +15,7 @@ if(isset($_POST['update_button'])){
 <!-- Update Form -->
 <?php include "header.php"; ?>
 <?php
-$sql = "SELECT Title, Description FROM users WHERE notes_id = '{$_GET['id']}'";
+$sql = "SELECT Title, Description FROM tempnotes WHERE notes_id = '{$_GET['id']}'";
 $result = mysqli_query($conn, $sql) or die("Query Failed");
 if(mysqli_num_rows($result)>0){
     while($row = mysqli_fetch_assoc($result)){

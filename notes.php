@@ -1,4 +1,6 @@
-<?php include "header.php"; ?>
+<?php include "header.php";
+// if(isset($_SESSION['user_name'])){
+?>
 <div class="container">
 <table class="table border-clr-5 my-3">
   <thead class="clr-5 text-light">
@@ -49,6 +51,7 @@ if(mysqli_num_rows($result1)>0){
     }
     echo '</ul>';
 }
+// }
 ?>
 </div>
 <?php include "footer.php"; ?>
