@@ -3,11 +3,8 @@
 <table class="table border-clr-5 my-3">
   <thead class="clr-5 text-light">
     <tr>
-      <th scope="col">USER NAME</th>
-      <th scope="col">EMAIL</th>
-      <th scope="col">FIRST NAME</th>
-      <th scope="col">LAST NAME</th>
-      <th scope="col">USER TYPE</th>
+      <th scope="col">NOTES TITLE</th>
+      <th scope="col">NOTES DESCRIPTION</th>
       <th scope="col">UPDATE</th>
       <th scope="col">DELETE</th>
     </tr>
@@ -22,16 +19,15 @@
         $page = 1;
     }
     $offset = ($page - 1) * $limit;
-    $sql = "SELECT user_name, user_email, first_name, last_name, user_type FROM users LIMIT {$offset},{$limit}";
+    $sql = "SELECT * FROM tempnotes LIMIT {$offset},{$limit}";
     $result = mysqli_query($conn, $sql) or die("Query Failed");
     if(mysqli_num_rows($result)>0){
         while($row = mysqli_fetch_assoc($result)){ ?>
         <tr>
-        <?php foreach($row as $value){ ?>
-            <td><?php echo $value ?></td>
-        <?php } ?>
-            <td><a class="btn btn-dark btn-sm clr-3 rounded-0" href="update_user.php?id=<?php echo $row['user_name'] ?>">update</a></td>
-            <td><a class="btn btn-danger btn-sm rounded-0" href="delete_user.php?id=<?php echo $row['user_name'] ?>">delete</a></td>
+            <td><?php echo $row['Title'] ?></td>
+            <td><?php echo $row['Description'] ?></td>
+            <td><a class="btn btn-dark btn-sm clr-3 rounded-0" href="update_notes.php?id=<?php echo $row['notes_id'] ?>">update</a></td>
+            <td><a class="btn btn-danger btn-sm rounded-0" href="delete_notes.php?id=<?php echo $row['notes_id'] ?>">delete</a></td>
         </tr>
     <?php }} ?>
   </tbody>
@@ -49,7 +45,7 @@ if(mysqli_num_rows($result1)>0){
         }else{
             $active = '';
         }
-        echo '<li class="page-item '.$active.'"><a class="page-link" href="users.php?page='.$i.'">'.$i.'</a></li>';
+        echo '<li class="page-item '.$active.'"><a class="page-link" href="notes.php?page='.$i.'">'.$i.'</a></li>';
     }
     echo '</ul>';
 }

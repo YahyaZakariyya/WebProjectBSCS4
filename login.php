@@ -1,5 +1,6 @@
 <?php include "header.php"; ?>
 <!-- Login Form -->
+<div class="container">
 <form name="login" action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
     <div class="mb-2">
         <label for="un_email" class="form-label">Username or Email</label>
@@ -11,6 +12,7 @@
     </div>
     <button type="submit" name="login_button">LOGIN</button>
 </form>
+</div>
 <?php
 if(isset($_POST['login_button'])){
     include "config.php";
@@ -20,12 +22,11 @@ if(isset($_POST['login_button'])){
     $result = mysqli_query($conn, $sql) or die('Query Failed');
     if(mysqli_num_rows($result)>0){
         while($row = mysqli_fetch_assoc($result)){
-            // echo "loggedin";
             session_start();
             $_SESSION['user_id'] = $row['user_id'];
             $_SESSION['user_name'] = $row['user_name'];
             $_SESSION['user_type'] = $row['user_type'];
-            header('Location:{$host_name}');
+            header('Location:http://localhost/project/index.php');
         }
     }else{
         echo "wrong username or password";

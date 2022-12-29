@@ -10,5 +10,5 @@
                 <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-settings" role="tab" aria-controls="list-settings">Settings</a>
                 </div>
             </div>
-            </div>
+        </div>
     </div>
