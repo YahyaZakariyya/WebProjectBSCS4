@@ -2,46 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>NSSC</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/79e546177a.js" crossorigin="anonymous"></script>
 </head>
-<body class="d-flex flex-column h-100">
-    <section class="flex-shrink-0">
-    <nav class="navbar clr-3 sticky-top">
-        <div class="container-fluid row justify-content-between">
-            <a class="navbar-brand col-auto col-lg-2" href="index.php">NSSC</a>
-            <div class="col-3 col-lg-6">
-                <form class="d-flex">
-                    <input class="form-control rounded-0 border-0" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn clr-5 rounded-0 text-light" type="submit">SEARCH</button>
-                    </form>      
-            </div>
-            <div class="col-auto col-lg-2 text-end">
-            <?php
-                session_start();
-                if(isset($_SESSION['user_name'])){
-            ?>
-                <!-- When logged in -->
-                <div class="btn-group">
-                    <button type="button" class="btn clr-5 text-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><?php echo $_SESSION['user_name']; ?></button>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                      <li><a class="dropdown-item" type="button" href="profile.php">Profile</a></li>
-                      <li><a class="dropdown-item" type="button">Settings action</a></li>
-                      <li><a class="dropdown-item" type="button" href="logout.php">Logout</a></li>
-                    </ul>
+<body>
+    <!-- Header -->
+    <header class="bg-info sticky-top">
+        <!-- Navbar -->
+        <nav class="navbar container-xl">
+            <div class="nav nav-fill container-fluid">
+                <!-- Navbar brand i.e. logo -->
+                <a class="navbar-brand" href="index.php">NSSC</a>
+                <!-- Search Bar and Button -->
+                <div class="col-3 col-sm-4 col-md-6">
+                    <form class="d-flex">
+                        <input class="form-control rounded-0 border-0" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-primary rounded-0" type="submit">SEARCH</button>
+                    </form>
                 </div>
-            <?php
-                }else{
-            ?>
-                <!-- When not logged in -->
-                <a class="btn clr-1 rounded-0 border-clr-5 mx-1" href="login.php">LOGIN</a>
-                <a class="btn clr-5 rounded-0 text-light" href="signup.php">SIGN UP</a>
-            <?php } ?>
-                
+                <!-- Login & SignUp Buttons -->
+                <div>
+                <?php
+                    session_start();
+                    if(isset($_SESSION['user_name'])){
+                ?>
+                    <!-- When logged in -->
+                    <div class="btn-group">
+                        <button type="button" class="btn clr-5 text-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><?php echo $_SESSION['user_name']; ?></button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" type="button" href="profile.php">Profile</a></li>
+                        <li><a class="dropdown-item" type="button">Settings action</a></li>
+                        <li><a class="dropdown-item" type="button" href="logout.php">Logout</a></li>
+                        </ul>
+                    </div>
+                <?php
+                    }else{
+                ?>
+                    <!-- When not logged in -->
+                    <a class="btn btn-primary rounded-0 mx-1" href="login.php">LOGIN</a>
+                    <a class="btn btn-outline-primary rounded-0" href="signup.php">SIGN UP</a>
+                <?php } ?>
+                </div>
             </div>
-        </div>
-    </nav>
-    <div class="clr-5" style="height: 20px;"></div>
+        </nav>
+    </header>
+    <section class="container-xl vh-100">
+    <!-- <div class="clr-5" style="height: 20px;"></div> -->
