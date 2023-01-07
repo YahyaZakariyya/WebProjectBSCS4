@@ -1,18 +1,26 @@
 <?php include "header.php"; ?>
 <div class="container">
+<div class="row justify-content-between">
+    <div class="col-auto">
+        <h1>USERS</h1>
+    </div>
+    <div class="col-auto align-self-center">
+        <button class="btn btn-dark">Add User</button>
+    </div>
+</div>
 <table class="table border-clr-5 my-3">
-  <thead class="clr-5 text-light">
+<thead class="bg-info">
     <tr>
-      <th scope="col">USER NAME</th>
-      <th scope="col">EMAIL</th>
-      <th scope="col">FIRST NAME</th>
-      <th scope="col">LAST NAME</th>
-      <th scope="col">USER TYPE</th>
-      <th scope="col">UPDATE</th>
-      <th scope="col">DELETE</th>
+    <th scope="col">USER NAME</th>
+    <th scope="col">EMAIL</th>
+    <th scope="col">FIRST NAME</th>
+    <th scope="col">LAST NAME</th>
+    <th scope="col">USER TYPE</th>
+    <th scope="col">UPDATE</th>
+    <th scope="col">DELETE</th>
     </tr>
-  </thead>
-  <tbody>
+</thead>
+<tbody>
     <?php
     include 'config.php';
     $limit = 25;
@@ -34,7 +42,7 @@
             <td><a class="btn btn-danger btn-sm rounded-0" href="delete_user.php?id=<?php echo $row['user_name'] ?>">delete</a></td>
         </tr>
     <?php }} ?>
-  </tbody>
+</tbody>
 </table>
 <?php
 $sql1 = "SELECT * FROM users";
